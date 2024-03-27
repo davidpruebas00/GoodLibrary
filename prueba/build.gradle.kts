@@ -1,8 +1,3 @@
-buildscript {
-    dependencies {
-        classpath("com.android.tools.build:gradle:8.3.0")
-    }
-}
 
 plugins {
     alias(libs.plugins.androidLibrary)
@@ -38,6 +33,23 @@ android {
         jvmTarget = "1.8"
     }
 }
+
+afterEvaluate {
+    publishing {
+        publications {
+            create<MavenPublication>("release") {
+                from(components["release"])
+                groupId = "com.github.davidpruebas00.GoodLibrary"
+                artifactId = "test"
+                version = "1.0.4"
+            }
+            repositories {
+                mavenLocal()
+            }
+        }
+    }
+}
+
 
 dependencies {
 
