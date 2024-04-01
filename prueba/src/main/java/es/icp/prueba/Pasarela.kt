@@ -5,7 +5,7 @@ import android.content.Intent
 import android.net.Uri
 import android.provider.Settings
 import com.google.gson.Gson
-import es.icp.goodlibrary.model.DefaultRequest
+import es.icp.prueba.model.DefaultRequest
 
 class Pasarela {
 

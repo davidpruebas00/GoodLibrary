@@ -41,7 +41,7 @@ afterEvaluate {
                 from(components["release"])
                 groupId = "com.github.davidpruebas00.GoodLibrary"
                 artifactId = "test"
-                version = "1.0.4"
+                version = "1.0.5"
             }
             repositories {
                 mavenLocal()
@@ -56,7 +56,6 @@ dependencies {
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
-    implementation(project(":app"))
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
