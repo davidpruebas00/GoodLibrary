@@ -8,9 +8,7 @@ import es.icp.prueba.model.DefaultRequest
 
 class Pasarela {
 
-    fun sendDefaultRequest(context: Context, defaultRequest: DefaultRequest): Boolean {
-
-        val jsonDefaultRequest = Gson().toJson(defaultRequest)
+    fun sendDefaultRequest(context: Context, jsonDefaultRequest: String): Boolean {
 
         //Enviamos datos a DTM
         val intent = Intent(Intent.ACTION_VIEW).apply {
