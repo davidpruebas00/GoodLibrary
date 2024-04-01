@@ -1,10 +1,8 @@
 package es.icp.prueba
 
-import android.content.ActivityNotFoundException
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
-import android.provider.Settings
 import com.google.gson.Gson
 import es.icp.prueba.model.DefaultRequest
 
