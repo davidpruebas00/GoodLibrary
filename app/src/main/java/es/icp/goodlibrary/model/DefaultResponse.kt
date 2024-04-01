@@ -1,9 +1,9 @@
-package es.icp.prueba.model
+package es.icp.goodlibrary.model
 
 import com.google.gson.annotations.SerializedName
 import java.io.Serializable
 
-data class DefaultRequest(
+class DefaultResponse (
     @SerializedName("ID_PAGO") val id_pago: Int? = null,
     @SerializedName("ID_PERFIL") val id_perfil: Int? = null,
     @SerializedName("ID_USUARIO") val id_usuario: Int? = null,
