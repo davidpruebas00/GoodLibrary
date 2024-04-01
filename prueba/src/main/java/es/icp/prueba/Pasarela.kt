@@ -1,5 +1,6 @@
 package es.icp.prueba
 
+import android.content.ActivityNotFoundException
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
@@ -9,8 +10,8 @@ import es.icp.prueba.model.DefaultRequest
 
 class Pasarela {
 
-    fun sendDefaultRequest(context: Context) {
-        val defaultRequest = DefaultRequest(1, 1, 1, 1, 1, 252.0, 3.15, getAndroidDeviceId(context), false, 1, "2021-10-10")
+    fun sendDefaultRequest(context: Context, defaultRequest: DefaultRequest): Boolean {
+
         val jsonDefaultRequest = Gson().toJson(defaultRequest)
 
         //Enviamos datos a DTM
@@ -19,11 +20,14 @@ class Pasarela {
             putExtra("jsonDefaultRequest", jsonDefaultRequest)
             addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
         }
-        context.startActivity(intent)
-    }
 
-    private fun getAndroidDeviceId(context: Context): String {
-        return Settings.Secure.getString(context.contentResolver, Settings.Secure.ANDROID_ID)
+        //Si no hay activity que pueda manejar el intent, mandamos false, si no, true
+        if (intent.resolveActivity(context.packageManager) == null) {
+           return false
+        }
+
+        context.startActivity(intent)
+        return true
     }
 
 }
