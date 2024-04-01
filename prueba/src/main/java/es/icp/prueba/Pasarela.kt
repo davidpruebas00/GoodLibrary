@@ -8,7 +8,7 @@ import es.icp.prueba.model.DefaultRequest
 
 class Pasarela {
 
-    fun sendDefaultRequest(context: Context, jsonDefaultRequest: String): Boolean {
+    fun sendDefaultRequest(context: Context, jsonDefaultRequest: String) {
 
         //Enviamos datos a DTM
         val intent = Intent(Intent.ACTION_VIEW).apply {
@@ -17,13 +17,15 @@ class Pasarela {
             addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
         }
 
+
+
         //Si no hay activity que pueda manejar el intent, mandamos false, si no, true
-        if (intent.resolveActivity(context.packageManager) == null) {
-           return false
-        }
+//        if (intent.resolveActivity(context.packageManager) == null) {
+//           return false
+//        }
 
         context.startActivity(intent)
-        return true
+//        return true
     }
 
 }

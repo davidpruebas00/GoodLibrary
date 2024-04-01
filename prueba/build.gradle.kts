@@ -41,7 +41,7 @@ afterEvaluate {
                 from(components["release"])
                 groupId = "com.github.davidpruebas00.GoodLibrary"
                 artifactId = "test"
-                version = "1.0.8"
+                version = "1.0.9"
             }
             repositories {
                 mavenLocal()
